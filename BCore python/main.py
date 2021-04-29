@@ -25,7 +25,7 @@ from ui_Main import Ui_MainWindow
 counter = 0
 
 # YOUR APPLICATION
-class MainWindow(QMainWindow, QtWidgets.QWidget):
+class MainWindow(QMainWindow):
     def __init__(self):
         QMainWindow.__init__(self)
         self.ui = Ui_MainWindow()
@@ -34,8 +34,8 @@ class MainWindow(QMainWindow, QtWidgets.QWidget):
         self.button.clicked.connect(self.handleButton)
         self.button.setIcon(qtGUI.QIcon('myImage.jpg'))
         self.button.setIconSize(qtCORE.QSize(24,24))
-        layout = qtWIDGETS.QVBoxLayout(self)
-        layout.addWidget(self.button)
+        self.layout = qtWIDGETS.QVBoxLayout(self)
+        self.layout.addWidget(self.button)
 
     def handleButton(self):
         pass
