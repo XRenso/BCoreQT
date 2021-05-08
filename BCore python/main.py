@@ -15,6 +15,8 @@ from PySide2.QtWidgets import *
 from PyQt5 import QtGui as qtGUI
 from PyQt5 import QtCore as qtCORE
 from PyQt5 import QtWidgets as qtWIDGETS
+from PyQt5.QtCore import QRect
+
 ## ==> SPLASH SCREEN
 from ui_BCore import Ui_SplashScreen
 
@@ -27,18 +29,12 @@ counter = 0
 # YOUR APPLICATION
 class MainWindow(QMainWindow):
     def __init__(self):
-        QMainWindow.__init__(self)
+        super(MainWindow, self).__init__()
+        self.setWindowTitle("BCore")
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
-        self.button = qtWIDGETS.QPushButton('menuButton')
-        self.button.clicked.connect(self.handleButton)
-        self.button.setIcon(qtGUI.QIcon('myImage.jpg'))
-        self.button.setIconSize(qtCORE.QSize(24,24))
-        self.layout = qtWIDGETS.QVBoxLayout(self)
-        self.layout.addWidget(self.button)
-
-    def handleButton(self):
-        pass
+        self.menuButt = QtWidgets.QPushButton('', self)
+        self.menuButt.setIcon(QtGui.QIcon("21.png"))
 
 
 
@@ -47,6 +43,7 @@ class SplashScreen(QMainWindow):
     def __init__(self):
         QMainWindow.__init__(self)
         self.ui = Ui_SplashScreen()
+        self.setWindowTitle("Start Screen")
         self.ui.setupUi(self)
 
         ## UI ==> INTERFACE CODES

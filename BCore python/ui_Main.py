@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'MainLiagRB.ui'
+## Form generated from reading UI file 'MainlDUSsK.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -45,9 +45,10 @@ class Ui_MainWindow(object):
         self.frame_menu.setStyleSheet(u"background-color: rgb(170, 85, 255);")
         self.frame_menu.setFrameShape(QFrame.StyledPanel)
         self.frame_menu.setFrameShadow(QFrame.Raised)
-        self.pushButton = QPushButton(self.frame_menu)
-        self.pushButton.setObjectName(u"pushButton")
-        self.pushButton.setGeometry(QRect(0, 3, 41, 61))
+        self.menuButton = QPushButton(self.frame_menu)
+        self.menuButton.setObjectName(u"menuButton")
+        self.menuButton.setGeometry(QRect(0, 3, 41, 61))
+        self.menuButton.setStyleSheet(u"")
 
         self.verticalLayout.addWidget(self.frame_menu)
 
@@ -99,6 +100,6 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"MainWindow", None))
-        self.pushButton.setText(QCoreApplication.translate("MainWindow", u"MENU", None))
+        self.menuButton.setText(QCoreApplication.translate("MainWindow", u"MENU", None))
     # retranslateUi
 
