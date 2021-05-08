@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'MainlDUSsK.ui'
+## Form generated from reading UI file 'MainWNgPHb.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -17,7 +17,7 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(1015, 600)
+        MainWindow.resize(1047, 573)
         MainWindow.setMinimumSize(QSize(1000, 500))
         MainWindow.setStyleSheet(u"background-color: rgb(45, 45, 45);")
         self.centralwidget = QWidget(MainWindow)
@@ -45,10 +45,21 @@ class Ui_MainWindow(object):
         self.frame_menu.setStyleSheet(u"background-color: rgb(170, 85, 255);")
         self.frame_menu.setFrameShape(QFrame.StyledPanel)
         self.frame_menu.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_2 = QHBoxLayout(self.frame_menu)
+        self.horizontalLayout_2.setSpacing(0)
+        self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
+        self.horizontalLayout_2.setContentsMargins(0, 0, 0, 0)
         self.menuButton = QPushButton(self.frame_menu)
         self.menuButton.setObjectName(u"menuButton")
-        self.menuButton.setGeometry(QRect(0, 3, 41, 61))
+        sizePolicy = QSizePolicy(QSizePolicy.Expanding, QSizePolicy.Expanding)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.menuButton.sizePolicy().hasHeightForWidth())
+        self.menuButton.setSizePolicy(sizePolicy)
         self.menuButton.setStyleSheet(u"")
+
+        self.horizontalLayout_2.addWidget(self.menuButton)
+
 
         self.verticalLayout.addWidget(self.frame_menu)
 
@@ -74,10 +85,33 @@ class Ui_MainWindow(object):
         self.verticalLayout_2.setContentsMargins(0, 0, 0, 0)
         self.frame_top_menu = QFrame(self.Content)
         self.frame_top_menu.setObjectName(u"frame_top_menu")
-        self.frame_top_menu.setMaximumSize(QSize(16777215, 70))
+        self.frame_top_menu.setMaximumSize(QSize(16777215, 110))
         self.frame_top_menu.setStyleSheet(u"background-color: rgb(35, 35, 35);")
         self.frame_top_menu.setFrameShape(QFrame.StyledPanel)
         self.frame_top_menu.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_3 = QHBoxLayout(self.frame_top_menu)
+        self.horizontalLayout_3.setObjectName(u"horizontalLayout_3")
+        self.Apps = QFrame(self.frame_top_menu)
+        self.Apps.setObjectName(u"Apps")
+        self.Apps.setFrameShape(QFrame.StyledPanel)
+        self.Apps.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_4 = QHBoxLayout(self.Apps)
+        self.horizontalLayout_4.setObjectName(u"horizontalLayout_4")
+        self.BCalc = QPushButton(self.Apps)
+        self.BCalc.setObjectName(u"BCalc")
+        self.BCalc.setMinimumSize(QSize(80, 80))
+
+        self.horizontalLayout_4.addWidget(self.BCalc)
+
+        self.BMedia = QPushButton(self.Apps)
+        self.BMedia.setObjectName(u"BMedia")
+        self.BMedia.setMinimumSize(QSize(80, 80))
+
+        self.horizontalLayout_4.addWidget(self.BMedia)
+
+
+        self.horizontalLayout_3.addWidget(self.Apps, 0, Qt.AlignLeft|Qt.AlignVCenter)
+
 
         self.verticalLayout_2.addWidget(self.frame_top_menu)
 
@@ -100,6 +134,8 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"MainWindow", None))
-        self.menuButton.setText(QCoreApplication.translate("MainWindow", u"MENU", None))
+        self.menuButton.setText("")
+        self.BCalc.setText("")
+        self.BMedia.setText("")
     # retranslateUi
 

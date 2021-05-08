@@ -33,9 +33,10 @@ class MainWindow(QMainWindow):
         self.setWindowTitle("BCore")
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
-        self.menuButt = QtWidgets.QPushButton('', self)
-        self.menuButt.setIcon(QtGui.QIcon("21.png"))
 
+        self.ui.menuButton.setIcon(QtGui.QIcon("21.png"))
+        self.ui.BCalc.setIcon(QtGui.QIcon("BCalc.png"))
+        self.ui.BCalc.setIconSize(QtCore.QSize(80,80))
 
 
 # SPLASH SCREEN
