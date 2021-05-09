@@ -5,7 +5,7 @@
 ## V: 1.0.0
 ##
 ################################################################################
-
+from ui_functions import *
 import sys
 import platform
 from PySide2 import QtCore, QtGui, QtWidgets
@@ -37,6 +37,10 @@ class MainWindow(QMainWindow):
         self.ui.menuButton.setIcon(QtGui.QIcon("21.png"))
         self.ui.BCalc.setIcon(QtGui.QIcon("BCalc.png"))
         self.ui.BCalc.setIconSize(QtCore.QSize(80,80))
+
+        self.ui.menuButton.clicked.connect(lambda: UIFuncrions.toggleMenu(self, 149, True))
+
+
 
 
 # SPLASH SCREEN
