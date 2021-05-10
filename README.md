@@ -1,2 +1,4 @@
 # BCoreQT
-234234
+Open source of not popular linux soft
+
+In work
