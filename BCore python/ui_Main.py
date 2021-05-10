@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'MainZCYpcg.ui'
+## Form generated from reading UI file 'MainVfMIUQ.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -64,13 +64,28 @@ class Ui_MainWindow(object):
 
         self.verticalLayout.addWidget(self.frame_menu, 0, Qt.AlignTop)
 
+        self.frame = QFrame(self.Left_Bar)
+        self.frame.setObjectName(u"frame")
+        self.frame.setMinimumSize(QSize(40, 440))
+        self.frame.setMaximumSize(QSize(16777215, 16777215))
+        self.frame.setFrameShape(QFrame.StyledPanel)
+        self.frame.setFrameShadow(QFrame.Raised)
+
+        self.verticalLayout.addWidget(self.frame)
+
         self.frame_left = QFrame(self.Left_Bar)
         self.frame_left.setObjectName(u"frame_left")
-        self.frame_left.setMaximumSize(QSize(40, 500))
+        self.frame_left.setMinimumSize(QSize(40, 50))
+        self.frame_left.setMaximumSize(QSize(40, 50))
         self.frame_left.setFrameShape(QFrame.StyledPanel)
         self.frame_left.setFrameShadow(QFrame.Raised)
+        self.btn_info = QPushButton(self.frame_left)
+        self.btn_info.setObjectName(u"btn_info")
+        self.btn_info.setGeometry(QRect(0, 0, 40, 50))
+        self.btn_info.setMinimumSize(QSize(40, 50))
+        self.btn_info.setMaximumSize(QSize(40, 60))
 
-        self.verticalLayout.addWidget(self.frame_left)
+        self.verticalLayout.addWidget(self.frame_left, 0, Qt.AlignBottom)
 
 
         self.horizontalLayout.addWidget(self.Left_Bar)
@@ -87,7 +102,7 @@ class Ui_MainWindow(object):
         self.frame_top_menu = QFrame(self.Content)
         self.frame_top_menu.setObjectName(u"frame_top_menu")
         self.frame_top_menu.setMinimumSize(QSize(0, 100))
-        self.frame_top_menu.setMaximumSize(QSize(16777215, 150))
+        self.frame_top_menu.setMaximumSize(QSize(16777215, 100))
         self.frame_top_menu.setStyleSheet(u"background-color: rgb(35, 35, 35);")
         self.frame_top_menu.setFrameShape(QFrame.StyledPanel)
         self.frame_top_menu.setFrameShadow(QFrame.Raised)
@@ -101,10 +116,10 @@ class Ui_MainWindow(object):
         self.Apps.setFrameShadow(QFrame.Raised)
         self.horizontalLayout_4 = QHBoxLayout(self.Apps)
         self.horizontalLayout_4.setObjectName(u"horizontalLayout_4")
-        self.BCalc = QPushButton(self.Apps)
-        self.BCalc.setObjectName(u"BCalc")
-        self.BCalc.setMinimumSize(QSize(80, 80))
-        self.BCalc.setStyleSheet(u"QPushButton{\n"
+        self.MainMenu_btn = QPushButton(self.Apps)
+        self.MainMenu_btn.setObjectName(u"MainMenu_btn")
+        self.MainMenu_btn.setMinimumSize(QSize(80, 80))
+        self.MainMenu_btn.setStyleSheet(u"QPushButton{\n"
 "	\n"
 "	background-color: rgb(27, 27, 27);\n"
 "}\n"
@@ -113,12 +128,12 @@ class Ui_MainWindow(object):
 "	background-color:rgb(185, 32, 185);\n"
 "}")
 
-        self.horizontalLayout_4.addWidget(self.BCalc)
+        self.horizontalLayout_4.addWidget(self.MainMenu_btn)
 
-        self.BMedia = QPushButton(self.Apps)
-        self.BMedia.setObjectName(u"BMedia")
-        self.BMedia.setMinimumSize(QSize(80, 80))
-        self.BMedia.setStyleSheet(u"QPushButton{\n"
+        self.BCalc_btn = QPushButton(self.Apps)
+        self.BCalc_btn.setObjectName(u"BCalc_btn")
+        self.BCalc_btn.setMinimumSize(QSize(80, 80))
+        self.BCalc_btn.setStyleSheet(u"QPushButton{\n"
 "	\n"
 "	background-color: rgb(27, 27, 27);\n"
 "}\n"
@@ -127,7 +142,21 @@ class Ui_MainWindow(object):
 "	background-color:rgb(185, 32, 185);\n"
 "}")
 
-        self.horizontalLayout_4.addWidget(self.BMedia)
+        self.horizontalLayout_4.addWidget(self.BCalc_btn)
+
+        self.BMedia_btn = QPushButton(self.Apps)
+        self.BMedia_btn.setObjectName(u"BMedia_btn")
+        self.BMedia_btn.setMinimumSize(QSize(80, 80))
+        self.BMedia_btn.setStyleSheet(u"QPushButton{\n"
+"	\n"
+"	background-color: rgb(27, 27, 27);\n"
+"}\n"
+"QPushButton:hover{\n"
+"	\n"
+"	background-color:rgb(185, 32, 185);\n"
+"}")
+
+        self.horizontalLayout_4.addWidget(self.BMedia_btn)
 
 
         self.horizontalLayout_3.addWidget(self.Apps, 0, Qt.AlignLeft|Qt.AlignVCenter)
@@ -139,15 +168,42 @@ class Ui_MainWindow(object):
         self.frame_pages.setObjectName(u"frame_pages")
         self.frame_pages.setFrameShape(QFrame.StyledPanel)
         self.frame_pages.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_4 = QVBoxLayout(self.frame_pages)
+        self.verticalLayout_4.setObjectName(u"verticalLayout_4")
         self.Pages_Widget = QStackedWidget(self.frame_pages)
         self.Pages_Widget.setObjectName(u"Pages_Widget")
-        self.Pages_Widget.setGeometry(QRect(9, 9, 761, 431))
-        self.page = QWidget()
-        self.page.setObjectName(u"page")
-        self.Pages_Widget.addWidget(self.page)
-        self.page_2 = QWidget()
-        self.page_2.setObjectName(u"page_2")
-        self.Pages_Widget.addWidget(self.page_2)
+        self.page_Main = QWidget()
+        self.page_Main.setObjectName(u"page_Main")
+        self.gridLayout = QGridLayout(self.page_Main)
+        self.gridLayout.setObjectName(u"gridLayout")
+        self.logo = QLabel(self.page_Main)
+        self.logo.setObjectName(u"logo")
+        self.logo.setMinimumSize(QSize(0, 0))
+        self.logo.setMaximumSize(QSize(550, 500))
+        self.logo.setPixmap(QPixmap(u"gray_logo.png"))
+        self.logo.setScaledContents(True)
+        self.logo.setAlignment(Qt.AlignCenter)
+
+        self.gridLayout.addWidget(self.logo, 0, 0, 1, 1)
+
+        self.Pages_Widget.addWidget(self.page_Main)
+        self.page_BCalc = QWidget()
+        self.page_BCalc.setObjectName(u"page_BCalc")
+        self.label = QLabel(self.page_BCalc)
+        self.label.setObjectName(u"label")
+        self.label.setGeometry(QRect(260, 150, 341, 151))
+        self.label.setAlignment(Qt.AlignCenter)
+        self.Pages_Widget.addWidget(self.page_BCalc)
+        self.page_BMedia = QWidget()
+        self.page_BMedia.setObjectName(u"page_BMedia")
+        self.label_2 = QLabel(self.page_BMedia)
+        self.label_2.setObjectName(u"label_2")
+        self.label_2.setGeometry(QRect(290, 210, 291, 151))
+        self.label_2.setAlignment(Qt.AlignCenter)
+        self.Pages_Widget.addWidget(self.page_BMedia)
+
+        self.verticalLayout_4.addWidget(self.Pages_Widget)
+
 
         self.verticalLayout_2.addWidget(self.frame_pages)
 
@@ -158,7 +214,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.Pages_Widget.setCurrentIndex(1)
+        self.Pages_Widget.setCurrentIndex(0)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -167,7 +223,12 @@ class Ui_MainWindow(object):
     def retranslateUi(self, MainWindow):
         MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"MainWindow", None))
         self.menuButton.setText("")
-        self.BCalc.setText("")
-        self.BMedia.setText("")
+        self.btn_info.setText("")
+        self.MainMenu_btn.setText("")
+        self.BCalc_btn.setText("")
+        self.BMedia_btn.setText("")
+        self.logo.setText("")
+        self.label.setText(QCoreApplication.translate("MainWindow", u"BCALC", None))
+        self.label_2.setText(QCoreApplication.translate("MainWindow", u"BMEDIA", None))
     # retranslateUi
 

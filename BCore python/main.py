@@ -32,15 +32,37 @@ class MainWindow(QMainWindow):
         super(MainWindow, self).__init__()
         self.setWindowTitle("BCore")
         self.ui = Ui_MainWindow()
+
         self.ui.setupUi(self)
+        #SetIconOnButtons
+        self.ui.menuButton.setIcon(QtGui.QIcon("21.png"))#Menu_btn
 
-        self.ui.menuButton.setIcon(QtGui.QIcon("21.png"))
-        self.ui.BCalc.setIcon(QtGui.QIcon("BCalc.png"))
-        self.ui.BCalc.setIconSize(QtCore.QSize(80,80))
+        self.ui.BCalc_btn.setIcon(QtGui.QIcon("BCalc.png"))#BCalc_btn
+        self.ui.BCalc_btn.setIconSize(QtCore.QSize(80,80))#change size of BCalc icon
 
-        self.ui.menuButton.clicked.connect(lambda: UIFuncrions.toggleMenu(self, 149, True))
+        self.ui.MainMenu_btn.setIcon(QtGui.QIcon("Home.png"))#Main Menu
+        self.ui.MainMenu_btn.setIconSize(QtCore.QSize(80,80))#change size of main menu icon
 
+        self.ui.btn_info.setIcon(QtGui.QIcon("info.png"))#Info
+        self.ui.btn_info.setIconSize(QtCore.QSize(40,60))
 
+        #TOGGLE MENU
+
+        self.ui.menuButton.clicked.connect(lambda: UIFuncrions.toggleMenu(self, 200 , True))#Button
+        #ShortCUt
+        self.shortcut = QShortcut(QKeySequence('Tab'), self)
+        self.shortcut.activated.connect(lambda:UIFuncrions.toggleMenu(self,200,True))
+
+        #PAGES
+
+        #MAIN MENU PAGE
+        self.ui.MainMenu_btn.clicked.connect(lambda: self.ui.Pages_Widget.setCurrentWidget(self.ui.page_Main))
+
+        #BCalc PAGE
+        self.ui.BCalc_btn.clicked.connect(lambda: self.ui.Pages_Widget.setCurrentWidget(self.ui.page_BCalc))
+
+        #BMedia PAGE
+        self.ui.BMedia_btn.clicked.connect(lambda: self.ui.Pages_Widget.setCurrentWidget(self.ui.page_BMedia))
 
 
 # SPLASH SCREEN
