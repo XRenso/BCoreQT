@@ -22,7 +22,7 @@ from ui_BCore import Ui_SplashScreen
 
 ## ==> MAIN WINDOW
 from ui_Main import Ui_MainWindow
-
+from ui_info import Ui_Info
 ## ==> GLOBALS
 counter = 0
 
@@ -30,11 +30,10 @@ counter = 0
 class MainWindow(QMainWindow):
     def __init__(self):
         super(MainWindow, self).__init__()
-        self.setWindowTitle("BCore")
-        self.ui = Ui_MainWindow()
 
+        self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
-        
+
 #SetIconOnButtons
         self.ui.menuButton.setIcon(QtGui.QIcon("21.png"))#Menu_btn
 
@@ -65,13 +64,26 @@ class MainWindow(QMainWindow):
         #BMedia PAGE
         self.ui.BMedia_btn.clicked.connect(lambda: self.ui.Pages_Widget.setCurrentWidget(self.ui.page_BMedia))
 
+#Button to show info
+        self.ui.btn_info.clicked.connect(lambda:self.openInfoWindow())
+    def openInfoWindow(self):
+        self.info = Info_Screen()
+        self.info.show()
 
 # SPLASH SCREEN
+class Info_Screen(QMainWindow):
+
+    def __init__(self):
+        QMainWindow.__init__(self)
+        self.ui = Ui_Info()
+    
+        self.ui.setupUi(self)
+
 class SplashScreen(QMainWindow):
     def __init__(self):
         QMainWindow.__init__(self)
         self.ui = Ui_SplashScreen()
-        self.setWindowTitle("Start Screen")
+
         self.ui.setupUi(self)
 
         ## UI ==> INTERFACE CODES

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'MainVfMIUQ.ui'
+## Form generated from reading UI file 'MainAcXNse.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -84,6 +84,15 @@ class Ui_MainWindow(object):
         self.btn_info.setGeometry(QRect(0, 0, 40, 50))
         self.btn_info.setMinimumSize(QSize(40, 50))
         self.btn_info.setMaximumSize(QSize(40, 60))
+        self.btn_info.setStyleSheet(u"QPushButton{\n"
+"	\n"
+"	background-color: rgb(27, 27, 27);\n"
+"}\n"
+"QPushButton:hover{\n"
+"	\n"
+"	\n"
+"	background-color: rgb(85, 0, 255);\n"
+"}")
 
         self.verticalLayout.addWidget(self.frame_left, 0, Qt.AlignBottom)
 
@@ -102,7 +111,7 @@ class Ui_MainWindow(object):
         self.frame_top_menu = QFrame(self.Content)
         self.frame_top_menu.setObjectName(u"frame_top_menu")
         self.frame_top_menu.setMinimumSize(QSize(0, 100))
-        self.frame_top_menu.setMaximumSize(QSize(16777215, 100))
+        self.frame_top_menu.setMaximumSize(QSize(16777215, 16777215))
         self.frame_top_menu.setStyleSheet(u"background-color: rgb(35, 35, 35);")
         self.frame_top_menu.setFrameShape(QFrame.StyledPanel)
         self.frame_top_menu.setFrameShadow(QFrame.Raised)
@@ -189,10 +198,6 @@ class Ui_MainWindow(object):
         self.Pages_Widget.addWidget(self.page_Main)
         self.page_BCalc = QWidget()
         self.page_BCalc.setObjectName(u"page_BCalc")
-        self.label = QLabel(self.page_BCalc)
-        self.label.setObjectName(u"label")
-        self.label.setGeometry(QRect(260, 150, 341, 151))
-        self.label.setAlignment(Qt.AlignCenter)
         self.Pages_Widget.addWidget(self.page_BCalc)
         self.page_BMedia = QWidget()
         self.page_BMedia.setObjectName(u"page_BMedia")
@@ -221,14 +226,13 @@ class Ui_MainWindow(object):
     # setupUi
 
     def retranslateUi(self, MainWindow):
-        MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"MainWindow", None))
+        MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"BCore", None))
         self.menuButton.setText("")
         self.btn_info.setText("")
         self.MainMenu_btn.setText("")
         self.BCalc_btn.setText("")
         self.BMedia_btn.setText("")
         self.logo.setText("")
-        self.label.setText(QCoreApplication.translate("MainWindow", u"BCALC", None))
         self.label_2.setText(QCoreApplication.translate("MainWindow", u"BMEDIA", None))
     # retranslateUi
 
