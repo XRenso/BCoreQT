@@ -34,7 +34,8 @@ class MainWindow(QMainWindow):
         self.ui = Ui_MainWindow()
 
         self.ui.setupUi(self)
-        #SetIconOnButtons
+        
+#SetIconOnButtons
         self.ui.menuButton.setIcon(QtGui.QIcon("21.png"))#Menu_btn
 
         self.ui.BCalc_btn.setIcon(QtGui.QIcon("BCalc.png"))#BCalc_btn
@@ -46,14 +47,14 @@ class MainWindow(QMainWindow):
         self.ui.btn_info.setIcon(QtGui.QIcon("info.png"))#Info
         self.ui.btn_info.setIconSize(QtCore.QSize(40,60))
 
-        #TOGGLE MENU
+#TOGGLE MENU
 
         self.ui.menuButton.clicked.connect(lambda: UIFuncrions.toggleMenu(self, 200 , True))#Button
         #ShortCUt
         self.shortcut = QShortcut(QKeySequence('Tab'), self)
         self.shortcut.activated.connect(lambda:UIFuncrions.toggleMenu(self,200,True))
 
-        #PAGES
+#PAGES
 
         #MAIN MENU PAGE
         self.ui.MainMenu_btn.clicked.connect(lambda: self.ui.Pages_Widget.setCurrentWidget(self.ui.page_Main))
