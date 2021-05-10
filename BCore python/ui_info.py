@@ -13,7 +13,7 @@ from PySide2.QtGui import *
 from PySide2.QtWidgets import *
 
 
-class Ui_MainWindow(object):
+class Ui_Info(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
@@ -100,4 +100,3 @@ class Ui_MainWindow(object):
                         "\u0421\u0401\u041c \u041e\u0422\u0412\u0415\u0422\u0421\u0412\u0415\u041d\u041d\u041e\u0421\u0422\u042c:</span></p><p align=\"center\">1)\u0417\u0430 \u0432\u0430\u0448\u0435 \u0437\u043b\u043e\u0434\u0435\u044f\u043d\u0438\u044f \u0441\u0434\u0435\u043b\u0430\u043d\u043d\u044b\u0435 \u0441 \u043f\u043e\u043c\u043e\u0449\u044c\u044e \u044d\u0442\u043e\u0433\u043e \u041f\u041e </p><p align=\"center\">2)\u0417\u0430 \u0432\u0440\u0435\u0434 \u0432\u0430\u0448\u0435\u043c\u0443 \u043f\u0435\u0440\u0441\u043e\u043d\u0430\u043b\u044c\u043d\u043e\u043c\u0443 \u0443\u0441\u0442\u0440\u043e\u0439\u0441\u0442\u0432\u0443 \u0441 \u043f\u043e\u043c\u043e\u0449\u044c\u044e \u044d\u0442\u043e\u0433\u043e \u041f\u041e</p><p align=\"center\"><br/></p><p align=\"center\"><br/></p></body></html>", None))
         self.creators.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"right\">\u041f\u0440\u043e\u0433\u0440\u0430\u043c\u043c\u0438\u0441\u0442 - \u041e\u0434\u0435\u0440\u0438\u0439 \u042f\u0440\u043e\u0441\u043b\u0430\u0432 \u0410\u043b\u0435\u043a\u0441\u0430\u043d\u0434\u0440\u043e\u0432\u0438\u0447</p><p align=\"right\">\u0410\u0432\u0442\u043e\u0440 \u0438\u0434\u0435\u0439 - \u0411\u0430\u0439\u0434\u0430\u043b\u0430 \u041d\u0438\u043a\u0438\u0442\u0430 \u0412\u043b\u0430\u0434\u0438\u043c\u0438\u0440\u043e\u0432\u0438\u0447</p><p align=\"right\"><br/></p></body></html>", None))
     # retranslateUi
-
