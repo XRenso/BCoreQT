@@ -30,7 +30,7 @@ counter = 0
 class MainWindow(QMainWindow):
     def __init__(self):
         super(MainWindow, self).__init__()
-
+        self.mw  = QMainWindow()
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
 
@@ -110,8 +110,8 @@ class MainWindow(QMainWindow):
 
         c_or_ce_list = ['AC']
         func_list=['1/x','x^2','sqrt','+/-','x^3']
-        self.mw  = MainWindow
-        if self.mw.sender().text()!='Backspace':
+
+        if self.mw.sender().text() != 'Backspace':
             if self.mw.sender().text() in num_list :
                 if self.processed == True:
                     self.text=''
