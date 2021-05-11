@@ -64,11 +64,102 @@ class MainWindow(QMainWindow):
         #BMedia PAGE
         self.ui.BMedia_btn.clicked.connect(lambda: self.ui.Pages_Widget.setCurrentWidget(self.ui.page_BMedia))
 
-#Button to show info
+#Show info
+        #Button
         self.ui.btn_info.clicked.connect(lambda:self.openInfoWindow())
+        #Shortcut
+        self.shortcut = QShortcut(QKeySequence('Ctrl+B'), self)
+        self.shortcut.activated.connect(lambda:self.openInfoWindow())
+
+#BCalc
+        self.ui.zero.clicked.connect(self.show) #0
+        self.ui.one.clicked.connect(self.show) #1
+        self.ui.two.clicked.connect(self.show)#2
+        self.ui.three.clicked.connect(self.show)#3
+        self.ui.four.clicked.connect(self.show)#4
+        self.ui.five.clicked.connect(self.show)#5
+        self.ui.six.clicked.connect(self.show)#6
+        self.ui.seven.clicked.connect(self.show)#7
+        self.ui.eight.clicked.connect(self.show)#8
+        self.ui.nine.clicked.connect(self.show)#9
+
+        self.ui.plus.clicked.connect(self.show)#+
+        self.ui.minus.clicked.connect(self.show)#-
+        self.ui.umnozhenie.clicked.connect(self.show)#x
+        self.ui.delenie.clicked.connect(self.show)#/
+
+        self.ui.dot.clicked.connect(self.show)#.
+        self.ui.Backspace.clicked.connect(self.show)#<=
+        self.ui.equal.clicked.connect(self.show)#=
+        self.ui.plusOrMinus.clicked.connect(self.show)#+/-
+
+        self.ui.AC.clicked.connect(self.show)#AC
+        self.ui.inThirdStepen.clicked.connect(self.show)#x^3
+        self.ui.percent.clicked.connect(self.show)#%
+
+        self.ui.oneFromX.clicked.connect(self.show)#1/x
+        self.ui.inSecondStepen.clicked.connect(self.show)#x^2
+        self.ui.radikal.clicked.connect(self.show)#sqrt
+
+    def show(self):
+
+        self.text = self.ui.symbols.toPlainText()
+
+        num_list = [str(num) for num in [0,1,2,3,4,5,6,7,8,9,'.']]
+        op_list = ['+','-','*','/','%']
+
+        c_or_ce_list = ['AC']
+        func_list=['1/x','x^2','sqrt','+/-','x^3']
+        self.mw  = MainWindow
+        if self.mw.sender().text()!='Backspace':
+            if self.mw.sender().text() in num_list :
+                if self.processed == True:
+                    self.text=''
+                self.text+=self.mw.sender().text()
+                self.processed = False
+
+            if self.mw.sender().text() in op_list :
+
+                self.text+=self.mw.sender().text()
+                self.processed = False
+
+            if self.mw.sender().text() =='=':
+                self.process()
+            if self.mw.sender().text() in c_or_ce_list:
+                self.text=''
+                self.processed = False
+            if self.mw.sender().text() in func_list:
+                if self.mw.sender().text() == func_list[0]:
+                    try:
+                        self.text= str(1/eval(self.text))
+                    except Exception as e:
+                        self.text=str(e)
+                        self.processed = False
+                if self.mw.sender().text() == func_list[1]:
+                    self.text= str(eval(self.text)**2)
+                    self.processed = False
+                if self.mw.sender().text() == func_list[2]:
+                    self.text= str(eval(self.text)**0.5)
+                    self.processed = False
+                if self.mw.sender().text() == func_list[3]:
+                    self.text= str(-1*eval(self.text))
+                    self.processed = False
+                if self.mw.sender().text() == func_list[4]:
+                    self.text= str(eval(self.text)**3)
+                    self.processed = False
+
+
+        else:
+            self.text = self.text[0:len(self.text)-1]
+
+        self.ui.symbols.setText(self.text)
+
     def openInfoWindow(self):
         self.info = Info_Screen()
         self.info.show()
+
+
+
 
 # SPLASH SCREEN
 class Info_Screen(QMainWindow):
@@ -76,7 +167,7 @@ class Info_Screen(QMainWindow):
     def __init__(self):
         QMainWindow.__init__(self)
         self.ui = Ui_Info()
-    
+
         self.ui.setupUi(self)
 
 class SplashScreen(QMainWindow):
