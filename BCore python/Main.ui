@@ -449,6 +449,21 @@ QPushButton:hover{
               <property name="spacing">
                <number>0</number>
               </property>
+              <item row="1" column="0">
+               <widget class="QPlainTextEdit" name="symbols">
+                <property name="minimumSize">
+                 <size>
+                  <width>0</width>
+                  <height>110</height>
+                 </size>
+                </property>
+                <property name="font">
+                 <font>
+                  <pointsize>17</pointsize>
+                 </font>
+                </property>
+               </widget>
+              </item>
               <item row="0" column="0">
                <widget class="QFrame" name="Calc">
                 <property name="minimumSize">
@@ -496,7 +511,7 @@ QPushButton:hover{
                       <number>2</number>
                      </property>
                      <item>
-                      <widget class="QPushButton" name="pushButton_21">
+                      <widget class="QPushButton" name="plusOrMinus">
                        <property name="sizePolicy">
                         <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
                          <horstretch>0</horstretch>
@@ -521,7 +536,7 @@ QPushButton:hover{
                       </widget>
                      </item>
                      <item>
-                      <widget class="QPushButton" name="pushButton_22">
+                      <widget class="QPushButton" name="zero">
                        <property name="sizePolicy">
                         <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
                          <horstretch>0</horstretch>
@@ -546,7 +561,7 @@ QPushButton:hover{
                       </widget>
                      </item>
                      <item>
-                      <widget class="QPushButton" name="pushButton_23">
+                      <widget class="QPushButton" name="dot">
                        <property name="sizePolicy">
                         <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
                          <horstretch>0</horstretch>
@@ -571,7 +586,7 @@ QPushButton:hover{
                       </widget>
                      </item>
                      <item>
-                      <widget class="QPushButton" name="pushButton_24">
+                      <widget class="QPushButton" name="equal">
                        <property name="sizePolicy">
                         <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
                          <horstretch>0</horstretch>
@@ -603,7 +618,7 @@ QPushButton:hover{
                       <number>2</number>
                      </property>
                      <item>
-                      <widget class="QPushButton" name="pushButton_13">
+                      <widget class="QPushButton" name="oneFromX">
                        <property name="sizePolicy">
                         <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
                          <horstretch>0</horstretch>
@@ -628,7 +643,7 @@ QPushButton:hover{
                       </widget>
                      </item>
                      <item>
-                      <widget class="QPushButton" name="pushButton_14">
+                      <widget class="QPushButton" name="inSecondStepen">
                        <property name="sizePolicy">
                         <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
                          <horstretch>0</horstretch>
@@ -653,7 +668,7 @@ QPushButton:hover{
                       </widget>
                      </item>
                      <item>
-                      <widget class="QPushButton" name="pushButton_15">
+                      <widget class="QPushButton" name="radikal">
                        <property name="sizePolicy">
                         <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
                          <horstretch>0</horstretch>
@@ -678,7 +693,7 @@ QPushButton:hover{
                       </widget>
                      </item>
                      <item>
-                      <widget class="QPushButton" name="pushButton_16">
+                      <widget class="QPushButton" name="delenie">
                        <property name="sizePolicy">
                         <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
                          <horstretch>0</horstretch>
@@ -710,7 +725,7 @@ QPushButton:hover{
                       <number>2</number>
                      </property>
                      <item>
-                      <widget class="QPushButton" name="pushButton_29">
+                      <widget class="QPushButton" name="one">
                        <property name="sizePolicy">
                         <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
                          <horstretch>0</horstretch>
@@ -735,7 +750,7 @@ QPushButton:hover{
                       </widget>
                      </item>
                      <item>
-                      <widget class="QPushButton" name="pushButton_30">
+                      <widget class="QPushButton" name="two">
                        <property name="sizePolicy">
                         <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
                          <horstretch>0</horstretch>
@@ -760,7 +775,7 @@ QPushButton:hover{
                       </widget>
                      </item>
                      <item>
-                      <widget class="QPushButton" name="pushButton_31">
+                      <widget class="QPushButton" name="three">
                        <property name="sizePolicy">
                         <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
                          <horstretch>0</horstretch>
@@ -785,7 +800,7 @@ QPushButton:hover{
                       </widget>
                      </item>
                      <item>
-                      <widget class="QPushButton" name="pushButton_32">
+                      <widget class="QPushButton" name="plus">
                        <property name="sizePolicy">
                         <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
                          <horstretch>0</horstretch>
@@ -817,7 +832,7 @@ QPushButton:hover{
                       <number>2</number>
                      </property>
                      <item>
-                      <widget class="QPushButton" name="pushButton_17">
+                      <widget class="QPushButton" name="seven">
                        <property name="sizePolicy">
                         <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
                          <horstretch>0</horstretch>
@@ -842,7 +857,7 @@ QPushButton:hover{
                       </widget>
                      </item>
                      <item>
-                      <widget class="QPushButton" name="pushButton_18">
+                      <widget class="QPushButton" name="eight">
                        <property name="sizePolicy">
                         <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
                          <horstretch>0</horstretch>
@@ -867,7 +882,7 @@ QPushButton:hover{
                       </widget>
                      </item>
                      <item>
-                      <widget class="QPushButton" name="pushButton_19">
+                      <widget class="QPushButton" name="nine">
                        <property name="sizePolicy">
                         <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
                          <horstretch>0</horstretch>
@@ -892,7 +907,7 @@ QPushButton:hover{
                       </widget>
                      </item>
                      <item>
-                      <widget class="QPushButton" name="pushButton_20">
+                      <widget class="QPushButton" name="umnozhenie">
                        <property name="sizePolicy">
                         <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
                          <horstretch>0</horstretch>
@@ -924,7 +939,7 @@ QPushButton:hover{
                       <number>2</number>
                      </property>
                      <item>
-                      <widget class="QPushButton" name="pushButton_25">
+                      <widget class="QPushButton" name="four">
                        <property name="sizePolicy">
                         <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
                          <horstretch>0</horstretch>
@@ -949,7 +964,7 @@ QPushButton:hover{
                       </widget>
                      </item>
                      <item>
-                      <widget class="QPushButton" name="pushButton_26">
+                      <widget class="QPushButton" name="five">
                        <property name="sizePolicy">
                         <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
                          <horstretch>0</horstretch>
@@ -974,7 +989,7 @@ QPushButton:hover{
                       </widget>
                      </item>
                      <item>
-                      <widget class="QPushButton" name="pushButton_27">
+                      <widget class="QPushButton" name="six">
                        <property name="sizePolicy">
                         <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
                          <horstretch>0</horstretch>
@@ -999,7 +1014,7 @@ QPushButton:hover{
                       </widget>
                      </item>
                      <item>
-                      <widget class="QPushButton" name="pushButton_28">
+                      <widget class="QPushButton" name="minus">
                        <property name="sizePolicy">
                         <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
                          <horstretch>0</horstretch>
@@ -1031,7 +1046,7 @@ QPushButton:hover{
                       <number>2</number>
                      </property>
                      <item>
-                      <widget class="QPushButton" name="pushButton">
+                      <widget class="QPushButton" name="percent">
                        <property name="sizePolicy">
                         <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
                          <horstretch>0</horstretch>
@@ -1056,7 +1071,7 @@ QPushButton:hover{
                       </widget>
                      </item>
                      <item>
-                      <widget class="QPushButton" name="pushButton_2">
+                      <widget class="QPushButton" name="inThirdStepen">
                        <property name="sizePolicy">
                         <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
                          <horstretch>0</horstretch>
@@ -1081,7 +1096,7 @@ QPushButton:hover{
                       </widget>
                      </item>
                      <item>
-                      <widget class="QPushButton" name="pushButton_3">
+                      <widget class="QPushButton" name="AC">
                        <property name="sizePolicy">
                         <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
                          <horstretch>0</horstretch>
@@ -1106,7 +1121,7 @@ QPushButton:hover{
                       </widget>
                      </item>
                      <item>
-                      <widget class="QPushButton" name="pushButton_4">
+                      <widget class="QPushButton" name="Backspace">
                        <property name="sizePolicy">
                         <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
                          <horstretch>0</horstretch>
@@ -1135,36 +1150,6 @@ QPushButton:hover{
                   </layout>
                  </item>
                 </layout>
-               </widget>
-              </item>
-              <item row="1" column="0">
-               <widget class="QLineEdit" name="symbols">
-                <property name="sizePolicy">
-                 <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-                  <horstretch>0</horstretch>
-                  <verstretch>0</verstretch>
-                 </sizepolicy>
-                </property>
-                <property name="minimumSize">
-                 <size>
-                  <width>0</width>
-                  <height>110</height>
-                 </size>
-                </property>
-                <property name="maximumSize">
-                 <size>
-                  <width>16777215</width>
-                  <height>16777215</height>
-                 </size>
-                </property>
-                <property name="font">
-                 <font>
-                  <pointsize>17</pointsize>
-                 </font>
-                </property>
-                <property name="text">
-                 <string/>
-                </property>
                </widget>
               </item>
              </layout>
