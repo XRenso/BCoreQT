@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'MainmdySKZ.ui'
+## Form generated from reading UI file 'MaindDJmKP.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -14,6 +14,59 @@ from PySide2.QtWidgets import *
 
 
 class Ui_MainWindow(object):
+    def show(self):
+
+        self.text = self.ui.symbols.toPlainText()
+
+        num_list = [str(num) for num in [0,1,2,3,4,5,6,7,8,9,'.']]
+        op_list = ['u"+"','u"-"','u"*"','u"/"','u"%"']
+
+        c_or_ce_list = ['u"AC"']
+        func_list=['u"1/x"','u"x^2"','u"sqrt"','u"+/-"','u"x^3"']
+
+        if self.sender().text()!='Backspace':
+            if self.sender().text() in num_list :
+                if self.processed == True:
+                    self.text=''
+                self.text+=self.sender().text()
+                self.processed = False
+
+            if self.sender().text() in op_list :
+
+                self.text+=self.sender().text()
+                self.processed = False
+
+            if self.sender().text() =='=':
+                self.process()
+            if self.sender().text() in c_or_ce_list:
+                self.text=''
+                self.processed = False
+            if self.sender().text() in func_list:
+                if self.sender().text() == func_list[0]:
+                    try:
+                        self.text= str(1/eval(self.text))
+                    except Exception as e:
+                        self.text=str(e)
+                    self.processed = False
+                if self.sender().text() == func_list[1]:
+                    self.text= str(eval(self.text)**2)
+                    self.processed = False
+                if self.sender().text() == func_list[2]:
+                    self.text= str(eval(self.text)**0.5)
+                    self.processed = False
+                if self.sender().text() == func_list[3]:
+                    self.text= str(-1*eval(self.text))
+                    self.processed = False
+                if self.sender().text() == func_list[4]:
+                    self.text= str(eval(self.text)**3)
+                    self.processed = False
+
+
+        else:
+            self.text = self.text[0:len(self.text)-1]
+
+        self.ui.symbols.setText(self.text)
+
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
@@ -204,15 +257,6 @@ class Ui_MainWindow(object):
         self.gridLayout_2.setSpacing(0)
         self.gridLayout_2.setObjectName(u"gridLayout_2")
         self.gridLayout_2.setContentsMargins(0, 0, 0, 0)
-        self.symbols = QPlainTextEdit(self.page_BCalc)
-        self.symbols.setObjectName(u"symbols")
-        self.symbols.setMinimumSize(QSize(0, 110))
-        font1 = QFont()
-        font1.setPointSize(17)
-        self.symbols.setFont(font1)
-
-        self.gridLayout_2.addWidget(self.symbols, 1, 0, 1, 1)
-
         self.Calc = QFrame(self.page_BCalc)
         self.Calc.setObjectName(u"Calc")
         self.Calc.setMinimumSize(QSize(0, 300))
@@ -484,6 +528,15 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_6.addLayout(self.Buttons_lol)
 
+        self.symbols = QTextEdit(self.Calc)
+        self.symbols.setObjectName(u"symbols")
+        self.symbols.setMinimumSize(QSize(0, 110))
+        font1 = QFont()
+        font1.setPointSize(17)
+        self.symbols.setFont(font1)
+
+        self.verticalLayout_6.addWidget(self.symbols)
+
 
         self.gridLayout_2.addWidget(self.Calc, 0, 0, 1, 1)
 
@@ -528,7 +581,7 @@ class Ui_MainWindow(object):
         self.equal.setText(QCoreApplication.translate("MainWindow", u"=", None))
         self.oneFromX.setText(QCoreApplication.translate("MainWindow", u"1/x", None))
         self.inSecondStepen.setText(QCoreApplication.translate("MainWindow", u"x^2", None))
-        self.radikal.setText(QCoreApplication.translate("MainWindow", u"\u221a(\u043a\u043e\u0440\u0435\u043d\u044c)", None))
+        self.radikal.setText(QCoreApplication.translate("MainWindow", u"\u221a", None))
         self.delenie.setText(QCoreApplication.translate("MainWindow", u"/", None))
         self.one.setText(QCoreApplication.translate("MainWindow", u"1", None))
         self.two.setText(QCoreApplication.translate("MainWindow", u"2", None))
@@ -548,4 +601,3 @@ class Ui_MainWindow(object):
         self.Backspace.setText(QCoreApplication.translate("MainWindow", u"Backspace", None))
         self.label_2.setText(QCoreApplication.translate("MainWindow", u"BMEDIA", None))
     # retranslateUi
-

@@ -16,7 +16,7 @@ from PyQt5 import QtGui as qtGUI
 from PyQt5 import QtCore as qtCORE
 from PyQt5 import QtWidgets as qtWIDGETS
 from PyQt5.QtCore import QRect
-
+import re
 ## ==> SPLASH SCREEN
 from ui_BCore import Ui_SplashScreen
 
@@ -30,9 +30,11 @@ counter = 0
 class MainWindow(QMainWindow):
     def __init__(self):
         super(MainWindow, self).__init__()
-        self.mw  = QMainWindow()
+
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
+
+
 
 #SetIconOnButtons
         self.ui.menuButton.setIcon(QtGui.QIcon("21.png"))#Menu_btn
@@ -63,45 +65,67 @@ class MainWindow(QMainWindow):
 
         #BMedia PAGE
         self.ui.BMedia_btn.clicked.connect(lambda: self.ui.Pages_Widget.setCurrentWidget(self.ui.page_BMedia))
-
+#################################3
 #Show info
         #Button
         self.ui.btn_info.clicked.connect(lambda:self.openInfoWindow())
         #Shortcut
         self.shortcut = QShortcut(QKeySequence('Ctrl+B'), self)
         self.shortcut.activated.connect(lambda:self.openInfoWindow())
+##########################
 
 #BCalc
-        self.ui.zero.clicked.connect(self.show) #0
-        self.ui.one.clicked.connect(self.show) #1
-        self.ui.two.clicked.connect(self.show)#2
-        self.ui.three.clicked.connect(self.show)#3
-        self.ui.four.clicked.connect(self.show)#4
-        self.ui.five.clicked.connect(self.show)#5
-        self.ui.six.clicked.connect(self.show)#6
-        self.ui.seven.clicked.connect(self.show)#7
-        self.ui.eight.clicked.connect(self.show)#8
-        self.ui.nine.clicked.connect(self.show)#9
 
-        self.ui.plus.clicked.connect(self.show)#+
-        self.ui.minus.clicked.connect(self.show)#-
-        self.ui.umnozhenie.clicked.connect(self.show)#x
-        self.ui.delenie.clicked.connect(self.show)#/
 
-        self.ui.dot.clicked.connect(self.show)#.
-        self.ui.Backspace.clicked.connect(self.show)#<=
-        self.ui.equal.clicked.connect(self.show)#=
-        self.ui.plusOrMinus.clicked.connect(self.show)#+/-
+        self.ui.retranslateUi(self)
+        self.ui.zero.clicked.connect(lambda:self.ui.show) #0
+        self.ui.one.clicked.connect(lambda:self.ui.show) #1
+        self.ui.two.clicked.connect(lambda:self.ui.show)#2
+        self.ui.three.clicked.connect(lambda:self.ui.show)#3
+        self.ui.four.clicked.connect(lambda:self.ui.show)#4
+        self.ui.five.clicked.connect(lambda:self.ui.show)#5
+        self.ui.six.clicked.connect(lambda:self.ui.show)#6
+        self.ui.seven.clicked.connect(lambda: self.ui.show)#7
+        self.ui.eight.clicked.connect(lambda:self.ui.show)#8
+        self.ui.nine.clicked.connect(lambda:self.ui.show)#9
 
-        self.ui.AC.clicked.connect(self.show)#AC
-        self.ui.inThirdStepen.clicked.connect(self.show)#x^3
-        self.ui.percent.clicked.connect(self.show)#%
+        self.ui.plus.clicked.connect(lambda:self.ui.show)#+
+        self.ui.minus.clicked.connect(lambda:self.ui.show)#-
+        self.ui.umnozhenie.clicked.connect(lambda:self.ui.show)#x
+        self.ui.delenie.clicked.connect(lambda:self.ui.show)#/
 
-        self.ui.oneFromX.clicked.connect(self.show)#1/x
-        self.ui.inSecondStepen.clicked.connect(self.show)#x^2
-        self.ui.radikal.clicked.connect(self.show)#sqrt
+        self.ui.dot.clicked.connect(lambda:self.ui.show)#.
+        self.ui.Backspace.clicked.connect(lambda:self.ui.show)#<=
+        self.ui.equal.clicked.connect(lambda:self.ui.show)#=
+        self.ui.plusOrMinus.clicked.connect(lambda:self.ui.show)#+/-
 
-    def show(self):
+        self.ui.AC.clicked.connect(lambda:self.ui.show)#AC
+        self.ui.inThirdStepen.clicked.connect(lambda:self.ui.show)#x^3
+        self.ui.percent.clicked.connect(lambda:self.ui.show)#%
+
+        self.ui.oneFromX.clicked.connect(lambda:self.ui.show)#1/x
+        self.ui.inSecondStepen.clicked.connect(lambda:self.ui.show)#x^2
+        self.ui.radikal.clicked.connect(lambda:self.ui.show)#sqrt
+
+        self.text = ''
+        self.processed = False
+
+
+
+
+
+
+    def process(self):
+        try:
+            inp=self.text
+            inp = re.sub(r"\.(?![0-9])","", inp)
+            val = eval(inp, {'__builtins__':None})
+            self.text=str(val)
+        except Exception as e:
+            self.text = str(e)
+        self.processed = True
+
+#    def show(self):
 
         self.text = self.ui.symbols.toPlainText()
 
@@ -111,40 +135,40 @@ class MainWindow(QMainWindow):
         c_or_ce_list = ['AC']
         func_list=['1/x','x^2','sqrt','+/-','x^3']
 
-        if self.mw.sender().text() != 'Backspace':
-            if self.mw.sender().text() in num_list :
+        if self.sender().text()!='Backspace':
+            if self.sender().text() in num_list :
                 if self.processed == True:
                     self.text=''
-                self.text+=self.mw.sender().text()
+                self.text+=self.sender().text()
                 self.processed = False
 
-            if self.mw.sender().text() in op_list :
+            if self.sender().text() in op_list :
 
-                self.text+=self.mw.sender().text()
+                self.text+=self.sender().text()
                 self.processed = False
 
-            if self.mw.sender().text() =='=':
+            if self.sender().text() =='=':
                 self.process()
-            if self.mw.sender().text() in c_or_ce_list:
+            if self.sender().text() in c_or_ce_list:
                 self.text=''
                 self.processed = False
-            if self.mw.sender().text() in func_list:
-                if self.mw.sender().text() == func_list[0]:
+            if self.sender().text() in func_list:
+                if self.sender().text() == func_list[0]:
                     try:
                         self.text= str(1/eval(self.text))
                     except Exception as e:
                         self.text=str(e)
-                        self.processed = False
-                if self.mw.sender().text() == func_list[1]:
+                    self.processed = False
+                if self.sender().text() == func_list[1]:
                     self.text= str(eval(self.text)**2)
                     self.processed = False
-                if self.mw.sender().text() == func_list[2]:
+                if self.sender().text() == func_list[2]:
                     self.text= str(eval(self.text)**0.5)
                     self.processed = False
-                if self.mw.sender().text() == func_list[3]:
+                if self.sender().text() == func_list[3]:
                     self.text= str(-1*eval(self.text))
                     self.processed = False
-                if self.mw.sender().text() == func_list[4]:
+                if self.sender().text() == func_list[4]:
                     self.text= str(eval(self.text)**3)
                     self.processed = False
 
@@ -154,6 +178,7 @@ class MainWindow(QMainWindow):
 
         self.ui.symbols.setText(self.text)
 
+#########################3
     def openInfoWindow(self):
         self.info = Info_Screen()
         self.info.show()
@@ -244,4 +269,5 @@ class SplashScreen(QMainWindow):
 if __name__ == "__main__":
     app = QApplication(sys.argv)
     window = SplashScreen()
+
     sys.exit(app.exec_())
